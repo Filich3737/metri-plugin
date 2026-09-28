@@ -1,13 +1,22 @@
 {
   "name": "metri",
+  "displayName": "metri",
   "version": "0.1.0",
   "description": "A private calorie diary with an authenticated remote MCP server and food logging skill.",
   "author": {
-    "name": "Polina Tolmacheva",
+    "name": "Filipp Khristoliubov",
     "email": "support@metri-diary.com"
   },
   "homepage": "https://metri-diary.com",
+  "repository": "https://github.com/Filich3737/metri-plugin",
   "license": "LicenseRef-Proprietary",
+  "keywords": [
+    "calories",
+    "food-diary",
+    "nutrition",
+    "mcp"
+  ],
   "icon": "./assets/metri-icon-512.png",
-  "privacyPolicyUrl": "https://metri-diary.com/privacy"
+  "privacyPolicyUrl": "https://metri-diary.com/privacy",
+  "supportUrl": "https://metri-diary.com/support"
 }
