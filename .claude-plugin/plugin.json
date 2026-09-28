@@ -7,5 +7,7 @@
     "email": "support@metri-diary.com"
   },
   "homepage": "https://metri-diary.com",
-  "license": "LicenseRef-Proprietary"
+  "license": "LicenseRef-Proprietary",
+  "icon": "./assets/metri-icon-512.png",
+  "privacyPolicyUrl": "https://metri-diary.com/privacy"
 }
