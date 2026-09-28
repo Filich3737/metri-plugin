@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "metri": {
+      "type": "http",
+      "url": "https://mcp.metri-diary.com/mcp"
+    }
+  }
+}
