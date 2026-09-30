@@ -1,8 +1,8 @@
 {
   "name": "metri",
   "displayName": "metri",
-  "version": "0.1.0",
-  "description": "A private calorie diary with an authenticated remote MCP server and food logging skill.",
+  "version": "1.0.1",
+  "description": "Your calorie diary in Claude: log meals by photo, voice or text, and keep every day.",
   "author": {
     "name": "Polina Tolmacheva",
     "email": "support@metri-diary.com"
@@ -16,7 +16,6 @@
     "nutrition",
     "mcp"
   ],
-  "icon": "./assets/metri-icon-512.png",
   "privacyPolicyUrl": "https://metri-diary.com/privacy",
   "supportUrl": "https://metri-diary.com/support"
 }
