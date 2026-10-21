@@ -28,41 +28,29 @@ Do not record something that is hypothetical, planned, part of a general nutriti
 
 ## Reconstruct the eating event
 
-Work like a food detective: treat the conversation and all attached images as one evidence set, infer how the pieces relate, and reconstruct what the user most likely consumed.
+Treat the conversation and all attached images as one evidence set, infer how the pieces relate, and reconstruct what the user most likely consumed.
 
 - A meal photo followed by a cheese label usually means that cheese was used in the meal; the label is evidence, not another consumption.
 - Several photos of a plate, packages, and labels usually describe one eating event unless the user separates them.
-- Include meaningful hidden components in realistic amounts when preparation implies them. A fried steak may include cooking oil; a dressed salad may include oil or dressing. Do not add a component the user explicitly ruled out.
+- Do not add a component the user explicitly ruled out.
 
 Search with `metri_search_foods` when the wording points to something personal or reusable that may be in the user's private library, such as "my regular chicken curry," "the pasta I cooked yesterday," a saved recipe batch, or a specific product with a reusable measure. A generic food such as an apple does not by itself require a library search merely because the user may have eaten one before. Omit the query only when the user wants to browse their library.
 
 Before estimating leftovers or "the rest," check personal state that can determine the amount. Combine saved package measures with `metri_get_diary`; for example, 100 g already logged from a saved 450 g tub means the remainder is 350 g.
 
-## Resolve nutrition: grams first
+Ask one targeted question only when a single missing fact would materially change the result; otherwise make a reasonable estimate rather than asking for structured input.
 
-For each eating event:
+## Record nutrition data
 
-1. Identify every meaningful consumed component before assigning calories. Decompose a mixed prepared meal when the evidence supports it: do not turn homemade pizza directly into one calorie guess when dough, cheese, meat, sauce, and oil can be estimated separately. Keep an exact packaged product or genuinely atomic food as one item, and do not invent a detailed recipe that the evidence cannot support.
-2. Estimate the amount of each component in grams. Use visible scale references such as a hand, coin, utensil, package dimensions, plate or bowl size, countable pieces, and known unit sizes. Determine dimensions or count first, then estimate volume and weight. Check that a visibly large or dense portion has not been compressed into a typical small serving.
-3. Ask one targeted question when a large portion has no reliable scale or when one missing fact would materially change the result—for example, the plate diameter, whether the whole serving was eaten, or how much oil or dressing was used. Otherwise make a reasonable estimate rather than asking for structured input.
-4. Resolve nutrition per 100 g in this order: a visible label; a web search for the exact branded or composite product; reliable memory for basic foods such as apple, flour, rice, or oil; then a reasoned estimate. Search the web for products such as a specific Snickers bar or a particular brand of ham when no readable label is available.
-5. Calculate expected calories, protein, carbohydrates, and fat for every component from its grams and per-100-g nutrition. Sanity-check the components and their sum before logging.
-
-For labels, use the package's stated net weight and serving size rather than a remembered standard. Convert serving nutrition to per 100 g when necessary. Store kcal; if only kJ is shown, use `kcal = kJ / 4.184`.
+New non-recipe nutrition is per 100 g. Store kcal; if only kJ is shown, use `kcal = kJ / 4.184`. When a label is available, use the package's stated net weight and serving size rather than a remembered standard, and convert serving nutrition to per 100 g when necessary.
 
 Set `source` to how the figures were actually obtained: `label`, `web`, `user_stated`, or `ai_estimate`. Figures recalled from memory or inferred from a photo are `ai_estimate`, not `label` or `web`.
-
-### Check the easy-to-miss calories
-
-Review uncertainty in this order: fat, protein, then carbohydrates. Fat is both calorie-dense and easy to miss in photos.
-
-Use a realistic non-zero amount of oil, butter, dressing, sauce, or frying fat when the cooking method normally implies it, even if it is not directly visible. Ask when the difference is material and the evidence is weak—for example, an undressed salad versus one with 20 g of oil. Respect explicit context such as "without oil" or "dry-fried."
 
 ## Log one eating event
 
 Call `metri_log_consumption` once with every component consumed in the same occasion. Log recognizable components as separate items so their grams and nutrition remain visible. Supporting packages and labels never become separate eating events. Include `renderFrom` and `renderTo` as the explicit user-local boundaries of the current day; the returned dashboard lets the attached card paint without another tool call.
 
-A new non-recipe food can be created inline; do not call `metri_save_food` merely as a prerequisite. New non-recipe nutrition is per 100 g.
+A new non-recipe food can be created inline; do not call `metri_save_food` merely as a prerequisite.
 
 Always pass the required event `name`. Preserve a meal name supplied by the user. Otherwise create a short, natural name from the consumed foods in the user's language; for a single item, reuse its food name. Do not ask a separate question merely to obtain a name. A later quantity or item correction keeps the saved event name unless the user explicitly asks to rename it.
 
