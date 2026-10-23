@@ -14,7 +14,7 @@ metri keeps track of it. No forms, no barcode scanning, no looking things up.
   your goals whenever you like.
 - **Look back.** Review any day, week, or longer stretch, and fix or remove
   entries you got wrong.
-- **Save what you eat often.** Keep personal foods, portions, and recipes so
+- **Save what you eat often.** Keep personal foods and cooked batches so
   logging them next time takes a few words.
 - **Set your goals.** Choose a daily calorie target, with optional protein,
   carbohydrate, and fat targets.
