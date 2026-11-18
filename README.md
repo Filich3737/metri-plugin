@@ -22,7 +22,7 @@ metri keeps track of it. No forms, no barcode scanning, no looking things up.
 ## Getting started
 
 Install the plugin and ask your AI assistant to log something. The first time,
-you'll sign in to metri and choose a subscription. After that, just talk.
+you'll sign in to metri. After that, just talk.
 
 ## Your data
 
