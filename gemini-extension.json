@@ -1,0 +1,10 @@
+{
+  "name": "metri",
+  "version": "1.5.1",
+  "description": "Your calorie diary in Gemini CLI: log meals by photo, voice or text, and keep every day",
+  "mcpServers": {
+    "metri": {
+      "httpUrl": "https://mcp.metri-diary.com/mcp"
+    }
+  }
+}
