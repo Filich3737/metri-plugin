@@ -21,8 +21,42 @@ metri keeps track of it. No forms, no barcode scanning, no looking things up.
 
 ## Getting started
 
-Install the plugin and ask your AI assistant to log something. The first time,
+Install metri in your assistant and ask it to log something. The first time,
 you'll sign in to metri. After that, just talk.
+
+- **Claude:** open [metri in Claude's directory](https://claude.ai/directory/metri)
+  and connect it.
+- **ChatGPT:** open
+  [metri in ChatGPT](https://chatgpt.com/plugins/plugin_asdk_app_6ae24c42c1608191b46a29ddbcfcae2c)
+  and connect it.
+- **Claude Code:**
+  `claude mcp add --transport http metri https://mcp.metri-diary.com/mcp`
+- **Gemini CLI:**
+  `gemini extensions install https://github.com/Filich3737/metri-plugin`
+- **Any other MCP client:** add the remote server
+  `https://mcp.metri-diary.com/mcp` (Streamable HTTP, OAuth sign-in).
+
+## Usage
+
+Talk to your assistant the way you'd tell a friend what you ate:
+
+- "I had two eggs and a slice of toast for breakfast"
+- "How many calories and how much protein do I have left today?"
+- "Another slice of the apple pie I baked on Sunday"
+- "What did I eat on average this week?"
+- A photo of your plate or a nutrition label, with "log this, I ate half"
+
+The assistant works out the portions, looks up anything it doesn't know and
+saves calories, protein, carbs and fat to your diary. A card in the chat shows
+today's progress, and a full day breakdown lists every meal.
+
+## Screenshots
+
+![Today's calories and macros against the daily goal](https://metri-diary.com/directory/1-card.png)
+
+![Full day breakdown of every meal](https://metri-diary.com/directory/2-full-day.png)
+
+![A logged meal with its nutrients](https://metri-diary.com/directory/3-meal.png)
 
 ## Your data
 
